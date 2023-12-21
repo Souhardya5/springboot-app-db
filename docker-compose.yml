@@ -5,8 +5,8 @@ services:
     container_name: mysqldb
     image: mysql
     ports:
-      -"3306:3306"
-    enviroment:
+      - "3306:3306"
+    environment:
       MYSQL_DATABASE: mydb
       MYSQL_ROOT_PASSWORD: root
 
@@ -16,6 +16,6 @@ services:
         context: ./
         dockerfile: Dockerfile
       ports:
-        "8080:8080"
+        - "8080:8080"
       depends_on:
-        mysqldb
+        - mysqldb
